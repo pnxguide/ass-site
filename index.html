@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASS 2026/2</title>
+<meta name="description" content="Agentic Software Studio (05696609), K-DAI, KMITL, 2026/2: staff, schedule and grading.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+/* A plain course page in the style of the Week 1 slides: white, near-black, one blue accent, one sans family. */
+:root{
+  --bg:#FFFFFF; --row:#F5F6F8; --fg:#111318; --muted:#5E636E; --rule:#E4E6EA;
+  --accent:#1D4ED8; --tint:#EEF2FF; --bar:#D9DCE2; --focus:#1D4ED8;
+  --font:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1115;--row:#171A20;--fg:#ECEDEF;--muted:#9AA0AB;--rule:#262A31;--accent:#7C9BFF;--tint:#1A2340;--bar:#353A44;--focus:#7C9BFF;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1115;--row:#171A20;--fg:#ECEDEF;--muted:#9AA0AB;--rule:#262A31;--accent:#7C9BFF;--tint:#1A2340;--bar:#353A44;--focus:#7C9BFF;color-scheme:dark}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.55 var(--font)}
+h1,h2,h3{font-family:var(--display);font-optical-sizing:auto}
+h1,h2,h3,p,ol,ul{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.muted{color:var(--muted)}
+.tn{font-variant-numeric:tabular-nums}
+
+header{padding-block:32px 24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);align-items:center;gap:24px;border-bottom:1px solid var(--rule)}
+header .intro{display:grid;gap:14px;min-width:0;justify-items:start}
+.peach{height:250px;position:relative}
+.peach canvas{display:block;width:100%;height:100%}
+.peach canvas.pointing{cursor:pointer}
+.peach .snd{position:absolute;right:4px;bottom:4px;width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);background:var(--bg);color:var(--muted);
+  display:grid;place-items:center;cursor:pointer;padding:0}
+.peach .snd:hover{color:var(--fg);border-color:var(--muted)}
+.peach .snd:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.peach .snd[aria-pressed="true"]{color:var(--accent)}
+.peach .snd svg{width:18px;height:18px}
+.peach .snd .waves{display:none}.peach .snd[aria-pressed="true"] .waves{display:inline}.peach .snd[aria-pressed="true"] .x{display:none}
+@media (max-width:720px){header{grid-template-columns:minmax(0,1fr)}.peach{height:210px;order:-1}}
+.code{font-size:.95rem;font-weight:500;color:var(--muted)}
+h1{font-size:clamp(1.9rem,4.6vw,2.6rem);font-weight:700;line-height:1.12}
+dl.meta{display:flex;flex-wrap:wrap;gap:10px 36px;margin:6px 0 0}
+dl.meta div{display:grid;gap:2px}
+dl.meta dt{font-size:.85rem;color:var(--muted)}
+dl.meta dd{margin:0;font-weight:500}
+
+nav.jump{display:flex;flex-wrap:wrap;gap:6px 20px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:.95rem}
+nav.jump a{color:var(--muted);text-decoration:none}
+nav.jump a:hover{color:var(--fg)}
+
+section{padding-block:36px;display:grid;gap:16px;border-bottom:1px solid var(--rule)}
+section>*{min-width:0}
+h2{font-size:1.4rem;font-weight:700}
+h3{font-size:1.1rem;font-weight:600}
+.about{display:grid;gap:12px;max-width:72ch}
+.art{margin:0}
+.art img{display:block;width:100%;height:auto;border-radius:12px}
+/* Description: text beside the whiteboard picture on wide screens. */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:20px 48px;align-items:center}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}.split .art{max-width:520px}}
+/* Paint on the wall: the picture's edges are torn and uneven, as if brushed straight onto the wall. */
+.painted img{border-radius:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22 preserveAspectRatio=%22none%22%3E%3Cfilter id=%22r%22 x=%22-10%%22 y=%22-10%%22 width=%22120%%22 height=%22120%%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.018 0.05%22 numOctaves=%224%22 seed=%2211%22 result=%22n%22/%3E%3CfeDisplacementMap in=%22SourceGraphic%22 in2=%22n%22 scale=%2246%22 xChannelSelector=%22R%22 yChannelSelector=%22G%22/%3E%3C/filter%3E%3Cg filter=%22url(%23r)%22 fill=%22%23000%22%3E%3Crect x=%2234%22 y=%2230%22 width=%22732%22 height=%22440%22/%3E%3Crect x=%2210%22 y=%22120%22 width=%2260%22 height=%2222%22/%3E%3Crect x=%22740%22 y=%22330%22 width=%2252%22 height=%2218%22/%3E%3Crect x=%22210%22 y=%228%22 width=%2290%22 height=%2226%22/%3E%3Crect x=%22520%22 y=%22468%22 width=%22110%22 height=%2222%22/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22 preserveAspectRatio=%22none%22%3E%3Cfilter id=%22r%22 x=%22-10%%22 y=%22-10%%22 width=%22120%%22 height=%22120%%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.018 0.05%22 numOctaves=%224%22 seed=%2211%22 result=%22n%22/%3E%3CfeDisplacementMap in=%22SourceGraphic%22 in2=%22n%22 scale=%2246%22 xChannelSelector=%22R%22 yChannelSelector=%22G%22/%3E%3C/filter%3E%3Cg filter=%22url(%23r)%22 fill=%22%23000%22%3E%3Crect x=%2234%22 y=%2230%22 width=%22732%22 height=%22440%22/%3E%3Crect x=%2210%22 y=%22120%22 width=%2260%22 height=%2222%22/%3E%3Crect x=%22740%22 y=%22330%22 width=%2252%22 height=%2218%22/%3E%3Crect x=%22210%22 y=%228%22 width=%2290%22 height=%2226%22/%3E%3Crect x=%22520%22 y=%22468%22 width=%22110%22 height=%2222%22/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat}
+
+.lead{font-size:1.15rem;max-width:60ch}
+/* Studios: one card per role, each showing that person cropped from the studio picture.
+   The picture is shown at 480% of the card width; each margin-left centres one person (at 25%, 50%, 75% of its width). */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;width:100%;max-width:1000px;justify-self:center}
+.card{display:grid;align-content:start;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--bg)}
+.crop{aspect-ratio:1/1;overflow:hidden;background:#F4EDE2}
+.crop img{display:block;width:480%;max-width:none;height:auto;margin-top:-97%}
+.card .body{display:grid;gap:8px;padding:16px 18px 20px}
+.card h3{display:flex;align-items:center;gap:8px}
+.card h3 i{width:12px;height:12px;border-radius:50%;flex:none}
+.card .uses{color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr)}.crop{aspect-ratio:4/3}}
+
+.staff{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px}
+@media (max-width:560px){.staff{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.staff li{min-width:0}
+.staff li,.staff a{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none;border-radius:10px}
+.staff .ph{flex:none;width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:1.25rem;transition:transform .15s ease}
+.staff a:hover .ph,.staff a:focus-visible .ph{transform:scale(1.08)}
+.staff a:hover b,.staff a:focus-visible b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.staff a:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){.staff .ph{transition:none}}
+.staff li>span:last-child,.staff a>span:last-child{display:grid;gap:2px;min-width:0}
+.staff b{font-weight:700;overflow-wrap:anywhere}
+.staff small{color:var(--muted);font-size:.9rem}
+
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--rule)}
+th{font-weight:600;color:var(--muted);font-size:.95rem}
+td small{display:block;color:var(--muted);font-size:.85rem}
+#schedule table{min-width:640px}
+td.wk{font-weight:600;white-space:nowrap;width:1%}
+td.date{white-space:nowrap;width:1%;color:var(--muted)}
+td.theme{font-weight:500}
+tr.off td{color:var(--muted)}
+tr.now td{background:var(--tint)}
+tr.now td.wk{color:var(--accent)}
+.key{color:var(--muted);font-size:.9rem}
+
+th.ln{font-size:.85rem;white-space:nowrap}
+td.ln{position:relative;vertical-align:middle;white-space:nowrap;font-size:.9rem;padding:8px 8px 8px 30px;width:1%;min-width:130px}
+td.ln.two{padding-left:48px}
+td.ln .bar,td.ln .blk{position:absolute;width:5px;border-radius:3px}
+td.ln .bar{left:13px}
+td.ln .pt{position:absolute;left:9px;top:50%;width:13px;height:13px;margin-top:-6.5px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+td.ln .pl{color:var(--accent);font-weight:600;display:block;line-height:1.25}
+td.ln .pl small{font-weight:400}
+
+
+#grading .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:820px){#grading .cols{grid-template-columns:minmax(0,1fr)}}
+#grading table td,#grading table th{vertical-align:middle}
+td.w{width:45%;padding-right:20px}
+td.w span{display:block;height:10px;border-radius:5px;background:var(--accent)}
+@media (max-width:560px){td.w{width:28%;padding-right:10px}}
+tr.sub td{color:var(--muted);font-size:.92rem;padding-block:5px}
+tr.sub td:first-child{padding-left:24px}
+tr.sub td.w span{height:6px;background:var(--bar)}
+#grading td:last-child,#grading th:last-child{text-align:right}
+tfoot td{font-weight:700;border-bottom:0}
+table.scale{max-width:280px}
+
+
+footer{padding-block:24px 40px;font-size:.95rem;display:grid;gap:4px}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="intro">
+    <p class="code">ASS 2026/2</p>
+    <h1>Agentic Software Studio</h1>
+    <dl class="meta tn">
+      <div><dt>Class</dt><dd>Sat 12:00–18:00</dd></div>
+    </dl>
+    </div>
+    <div class="peach" id="peach"></div>
+  </header>
+
+  <nav class="jump" aria-label="Sections">
+    <a href="#about">Description</a><a href="#staff">Staff</a><a href="#schedule">Schedule</a><a href="studios/">Studios</a><a href="#grading">Grading</a>
+  </nav>
+
+  <section id="about">
+    <h2>Course Description</h2>
+    <div class="split">
+    <div class="about">
+      <p>As coding agents become increasingly capable, they enable rapid construction of greenfield software for prototyping and business proofing. Effective use of these agents, however, requires sufficient software knowledge to specify, steer, review, and improve their work while controlling time and cost.</p>
+      <p>In this course, students form mini software studios and construct projects in web, mobile, data mining, games and simulations, agentic applications, and production software systems. Students learn the underlying components well enough to direct coding agents wisely, validate technical results, and professionally pitch their prototypes.</p>
+    </div>
+    <figure class="art painted"><img src="illustrations/studio-b.svg?v=2" width="800" height="500" loading="lazy" alt="A studio at a whiteboard: the designer sketches a wireframe, the developer holds a laptop with code, and the business member points at a rising chart."></figure>
+    </div>
+  </section>
+
+  <section id="staff">
+    <h2>Course Staff</h2>
+    <ul class="staff">
+      <li><a href="https://pnx.guide" target="_blank" rel="noopener"><span class="ph">G</span><span><b>Guide</b><small>Instructor</small></span></a></li>
+      <li><span class="ph">N</span><span><b>Nueng</b><small>The Ultimate Teaching Assistant</small></span></li>
+    </ul>
+  </section>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <div class="scroll"><table class="tn">
+      <thead><tr id="head"><th>Week</th><th>Date</th><th>Session Title</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+  </section>
+
+  <section id="grading">
+    <h2>Grading</h2>
+    <div class="cols">
+      <table class="tn">
+        <thead><tr><th>Component</th><th></th><th>%</th></tr></thead>
+        <tbody id="grades"></tbody>
+        <tfoot><tr><td>Total</td><td></td><td>100</td></tr></tfoot>
+      </table>
+      <table class="scale tn">
+        <thead><tr><th>Grade</th><th>Minimum score</th></tr></thead>
+        <tbody id="scale"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap muted">
+  <p>&copy; 2026 Yuttapichai Kerdcharoen. All rights reserved.</p>
+</footer>
+
+<script>
+const W = [{"wk": "1", "date": "2026-12-12", "theme": "Building a Software Development Team"}, {"wk": "2", "date": "2026-12-19", "theme": "Web Application: Under the Hood"}, {"wk": "3", "date": "2026-12-26", "theme": "From Web to Mobile Applications"}, {"wk": "4", "date": "2027-01-02", "theme": "No class (New Year)", "off": true}, {"wk": "5", "date": "2027-01-09", "theme": "Sprint 1 Presentation · Sprint 2 Launch"}, {"wk": "6", "date": "2027-01-16", "theme": "Data Mining with Coding Agents"}, {"wk": "7", "date": "2027-01-23", "theme": "Sprint 2 Presentation · Sprint 3 Launch"}, {"wk": "8", "date": "2027-01-30", "theme": "Coding Agents in Game Engines"}, {"wk": "Break", "date": "2027-02-06", "theme": "No class (KMITL Midterm Week)", "off": true}, {"wk": "9", "date": "2027-02-13", "theme": "Sprint 3 Presentation · Sprint 4 and Final Project Launch"}, {"wk": "10", "date": "2027-02-20", "theme": "Agents Build Agents"}, {"wk": "11", "date": "2027-02-27", "theme": "Sprint 4 Presentation · Sprint 5 Launch"}, {"wk": "12", "date": "2027-03-06", "theme": "Software Deployment Tools and Techniques"}, {"wk": "13", "date": "2027-03-13", "theme": "Sprint 5 Presentation"}, {"wk": "14", "date": "2027-03-20", "theme": "Software Quality and Cost Optimization"}, {"wk": "15", "date": "2027-03-27", "theme": "Final Project Presentation"}];
+
+const GRADES = [
+  ['Sprint 1: Web',10,[]],
+  ['Sprint 2: Mobile',10,[]],
+  ['Sprint 3: Data Mining',10,[]],
+  ['Sprint 4: Games & Simulations',10,[]],
+  ['Sprint 5: Agentic Applications',10,[]],
+  ['Final Project',50,[]]
+];
+const SCALE = [['A',90],['B+',85],['B',80],['C+',75],['C',70],['D+',65],['D',60],['F','Below 60']];
+
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const day = s => new Date(s + 'T00:00:00');
+const today = new Date(); today.setHours(0,0,0,0);
+
+/* Timeline columns, as on the DBP page: a bar runs down the weeks a project is open; a dot marks each deadline. */
+const LANES = [
+  {name:'Sprints', blocks:[['Sprint 1','2','5','Sat 9 Jan'],['Sprint 2','5','7','Sat 23 Jan'],['Sprint 3','7','9','Sat 13 Feb'],['Sprint 4','9','11','Sat 27 Feb'],['Sprint 5','11','13','Sat 13 Mar']]},
+  {name:'Final project', from:'9', to:'15', marks:{'10':['Proposal','Sat 20 Feb'],'12':['Checkpoint 1','Sat 6 Mar'],'14':['Checkpoint 2','Sat 20 Mar'],'15':['Presentation','Sat 27 Mar']}}
+];
+const idx = k => W.findIndex(w => w.wk === k);
+const grad = (i, a, b) => {
+  const s = a + .5, e = b + .5, top = i + (i === a ? .5 : 0), bot = i + (i === b ? .5 : 1);
+  const p = v => Math.round(Math.min(1, Math.max(0, (v - s) / (e - s || 1))) * 100);
+  return `background:linear-gradient(color-mix(in srgb,var(--accent) ${p(top)}%,var(--bar)),color-mix(in srgb,var(--accent) ${p(bot)}%,var(--bar)))`;
+};
+const laneCell = (l, w, i) => {
+  if (l.blocks) {
+    let html = '';
+    l.blocks.forEach(([n, from, to, due], k) => {
+      const a = idx(from), b = idx(to), left = k % 2 ? 30 : 13, tip = `${n}: launched W${from}, due ${due}`;
+      if (i < a || i > b) return;
+      html += `<span class="blk" style="left:${left}px;top:${i === a ? '50%' : '0'};bottom:${i === b ? '50%' : '-1px'};${grad(i, a, b)}" title="${tip}"></span>`;
+      if (i === b) html += `<span class="pt" style="left:${left - 4}px"></span><span class="pl" title="${tip}">${n}<small>${due}</small></span>`;
+    });
+    return `<td class="ln two">${html}</td>`;
+  }
+  const a = idx(l.from), b = idx(l.to), m = l.marks[w.wk];
+  const bar = i >= a && i <= b ? `<span class="bar" style="top:${i === a ? '50%' : '0'};bottom:${i === b ? '50%' : '-1px'};${grad(i, a, b)}"></span>` : '';
+  const dot = m ? `<span class="pt"></span><span class="pl">${esc(m[0])}<small>${m[1]}</small></span>` : '';
+  return `<td class="ln">${bar}${dot}</td>`;
+};
+
+document.getElementById('head').insertAdjacentHTML('beforeend', LANES.map(l => `<th class="ln">${esc(l.name)}</th>`).join(''));
+document.getElementById('rows').innerHTML = W.map((w, i) => {
+  const d = w.date ? day(w.date) : null, from = d && new Date(d); if (d) from.setDate(d.getDate() - 6);
+  const cls = [w.off && 'off', d && today >= from && today <= d && 'now'].filter(Boolean).join(' ');
+  return `<tr class="${cls}"><td class="wk">${/\d/.test(w.wk) ? 'W' + w.wk : w.wk}</td>`
+    + `<td class="date">${d ? d.toLocaleDateString('en-GB', {day:'numeric', month:'short'}) : 'TBA'}</td>`
+    + `<td class="theme">${esc(w.theme)}</td>`
+    + LANES.map(l => laneCell(l, w, i)).join('') + `</tr>`;
+}).join('');
+
+
+const maxW = Math.max(...GRADES.map(g => g[1]));
+document.getElementById('grades').innerHTML = GRADES.map(([n, p, parts, note]) =>
+  `<tr><td>${esc(n)}${note ? `<small>${note}</small>` : ''}</td><td class="w"><span style="width:${p / maxW * 100}%"></span></td><td>${p}</td></tr>`
+  + parts.map(([s, q]) => `<tr class="sub"><td>${esc(s)}</td><td class="w"><span style="width:${q / maxW * 100}%"></span></td><td>${q}</td></tr>`).join('')).join('');
+document.getElementById('scale').innerHTML = SCALE.map(([g, s]) => `<tr><td>${g}</td><td>${s}</td></tr>`).join('');
+</script>
+<script type="module">
+/* Header: the Developer, Designer and Business peach dolls wander about on their own.
+   The dolls themselves live in peach/dolls.js, shared with the dolls page. */
+import * as THREE from 'three';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {DOLLS, makeDoll, pose, ACTIONS, sound, unlockAudio} from './peach/dolls.js';
+
+const box = document.getElementById('peach');
+let renderer;
+try { renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); } catch (e) { renderer = null; }
+if (renderer) {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  box.appendChild(renderer.domElement);
+  renderer.domElement.setAttribute('role', 'img');
+  renderer.domElement.setAttribute('aria-label', 'Three peach dolls, a developer, a designer and a business member, wandering around');
+
+  const scene = new THREE.Scene();
+  scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), .04).texture;
+  scene.environmentIntensity = .22;
+  scene.add(new THREE.HemisphereLight('#FFFFFF', '#C9CED8', .65));
+  const key = new THREE.DirectionalLight('#FFF4EA', 2.4);
+  key.position.set(3, 7, 5); key.castShadow = true; key.shadow.mapSize.set(1024, 1024);
+  Object.assign(key.shadow.camera, {left: -5, right: 5, top: 5, bottom: -5, near: 1, far: 20});
+  key.shadow.radius = 5; key.shadow.bias = -.0004; key.shadow.normalBias = .02;
+  scene.add(key);
+  const rim = new THREE.DirectionalLight('#DCE4FF', .9); rim.position.set(-5, 4, -6); scene.add(rim);
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), new THREE.ShadowMaterial({opacity: .12}));
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+
+  const camera = new THREE.PerspectiveCamera(28, 1, .1, 60);
+  const look = new THREE.Vector3(0, 1.2, .2);
+
+  // Where they may walk: a wide, shallow patch in front of the camera.
+  const AREA = {x: 3.3, z: 1.2}, GAP = 2.1;
+  const cast = DOLLS.filter(d => ['dev', 'des', 'bus'].includes(d.id)).map(makeDoll);
+  [[-2.6, .1], [0, .4], [2.6, -.1]].forEach(([x, z], i) => {
+    const d = cast[i]; d.root.position.set(x, 0, z); d.heading = d.restHeading = (i - 1) * -.18;
+    d.next = .8 + i * .9 + Math.random();
+    scene.add(d.root);
+  });
+
+  const free = (p, d) => cast.every(o => o === d || (o.root.position.distanceTo(p) > GAP && (!o.target || o.target.distanceTo(p) > GAP)));
+  const spot = d => {
+    for (let k = 0; k < 30; k++) {
+      const p = new THREE.Vector3((Math.random() * 2 - 1) * AREA.x, 0, (Math.random() * 2 - 1) * AREA.z);
+      if (p.distanceTo(d.root.position) > 1.1 && free(p, d)) return p;
+    }
+    return null;
+  };
+  const MOVES = ['wave', 'wave', 'jump', 'spin', 'dance'];
+  const act = (d, name, t) => { d.action = {name, t0: t}; if (name === 'jump' || name === 'dance') d.happyUntil = t + ACTIONS[name].dur; };
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Each doll decides, now and then, to wander somewhere new or do a little move.
+  const think = (d, t) => {
+    if (still.matches || d.target || d.action || t < d.next) return;
+    if (Math.random() < .62) { const p = spot(d); if (p) d.target = p; }
+    else act(d, MOVES[Math.floor(Math.random() * MOVES.length)], t);
+    d.restHeading = (Math.random() - .5) * .6;     // when it stops, face the camera, more or less
+    d.next = t + 2.2 + Math.random() * 3.2;
+  };
+  // Keep them from walking through each other.
+  const part = () => {
+    for (let i = 0; i < cast.length; i++) for (let j = i + 1; j < cast.length; j++) {
+      const a = cast[i].root.position, b = cast[j].root.position, gap = a.distanceTo(b);
+      if (gap < 2.35 && gap > 1e-4) {
+        const push = b.clone().sub(a).setY(0).setLength((2.35 - gap) / 2);
+        a.sub(push); b.add(push);
+      }
+    }
+  };
+
+  // Click a doll and it jumps for joy.
+  const ray = new THREE.Raycaster(), ptr = new THREE.Vector2();
+  const at = e => {
+    const r = renderer.domElement.getBoundingClientRect();
+    ptr.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1); ray.setFromCamera(ptr, camera);
+    const hit = ray.intersectObjects(cast.map(d => d.torso), true)[0];
+    return hit ? cast.find(d => { let o = hit.object; while (o) { if (o === d.torso) return true; o = o.parent; } return false; }) : null;
+  };
+  renderer.domElement.addEventListener('pointermove', e => renderer.domElement.classList.toggle('pointing', !!at(e)));
+  renderer.domElement.addEventListener('click', e => {
+    const d = at(e); if (!d || d.action) return;
+    unlockAudio(); d.target = null; act(d, 'jump', clock.elapsedTime);
+    d.action.giggle = true;
+  });
+  // Sound for the wandering is off unless the visitor turns it on (remembered on this browser).
+  let saved = null; try { saved = localStorage.getItem('ass-doll-sound'); } catch (e) {}
+  sound.on = saved === 'on';
+  const snd = document.createElement('button'); snd.type = 'button'; snd.className = 'snd';
+  snd.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><g class="waves"><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></g><g class="x"><path d="m16 9 5 6M21 9l-5 6"/></g></svg>';
+  const showSnd = () => { snd.setAttribute('aria-pressed', String(sound.on)); snd.setAttribute('aria-label', sound.on ? 'Turn doll sounds off' : 'Turn doll sounds on'); snd.title = snd.getAttribute('aria-label'); };
+  snd.onclick = () => { sound.on = !sound.on; if (sound.on) unlockAudio(); try { localStorage.setItem('ass-doll-sound', sound.on ? 'on' : 'off'); } catch (e) {} showSnd(); };
+  box.appendChild(snd); showSnd();
+  if (sound.on) { const go = () => { unlockAudio(); removeEventListener('pointerdown', go); removeEventListener('keydown', go); }; addEventListener('pointerdown', go); addEventListener('keydown', go); }
+
+  const size = () => {
+    const w = box.clientWidth, h = box.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    // Back off until the whole walking patch, dolls included, fits the box.
+    const half = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
+    const dist = Math.max((AREA.x + 1.5) / (half * camera.aspect), 2.1 / half);
+    camera.position.set(0, dist * .24 + .8, dist + .2);
+    camera.lookAt(look);
+    camera.updateProjectionMatrix();
+  };
+  new ResizeObserver(size).observe(box); size();
+
+  // Only animate while the header is on screen.
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(box);
+  const clock = new THREE.Clock();
+  renderer.setAnimationLoop(() => {
+    const dt = Math.min(clock.getDelta(), .05), t = clock.elapsedTime;
+    if (!visible) return;
+    for (const d of cast) { think(d, t); pose(d, still.matches ? t * .4 : t, dt); }
+    part();
+    for (const d of cast) {
+      const p = d.root.position; p.x = THREE.MathUtils.clamp(p.x, -AREA.x - .3, AREA.x + .3); p.z = THREE.MathUtils.clamp(p.z, -AREA.z - .3, AREA.z + .3);
+    }
+    renderer.render(scene, camera);
+  });
+}
+</script>
+</body>
+</html>

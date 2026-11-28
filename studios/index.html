@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studios · ASS 2026/2</title>
+<meta name="description" content="Studios in Agentic Software Studio (05696609), K-DAI, KMITL, 2026/2: the Developer, Designer and Business roles.">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+<style>
+/* A plain course page in the style of the Week 1 slides: white, near-black, one blue accent, one sans family. */
+:root{
+  --bg:#FFFFFF; --row:#F5F6F8; --fg:#111318; --muted:#5E636E; --rule:#E4E6EA;
+  --accent:#1D4ED8; --tint:#EEF2FF; --bar:#D9DCE2; --focus:#1D4ED8;
+  --font:"Instrument Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1115;--row:#171A20;--fg:#ECEDEF;--muted:#9AA0AB;--rule:#262A31;--accent:#7C9BFF;--tint:#1A2340;--bar:#353A44;--focus:#7C9BFF;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1115;--row:#171A20;--fg:#ECEDEF;--muted:#9AA0AB;--rule:#262A31;--accent:#7C9BFF;--tint:#1A2340;--bar:#353A44;--focus:#7C9BFF;color-scheme:dark}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.55 var(--font)}
+h1,h2,h3{font-family:var(--display);font-optical-sizing:auto}
+h1,h2,h3,p,ol,ul{margin:0}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.muted{color:var(--muted)}
+.tn{font-variant-numeric:tabular-nums}
+
+header{padding-block:32px 24px;display:grid;grid-template-columns:minmax(0,1fr) 300px;align-items:center;gap:24px;border-bottom:1px solid var(--rule)}
+header .intro{display:grid;gap:14px;min-width:0;justify-items:start}
+.peach{height:240px;display:grid;place-items:center;position:relative}
+.peach canvas{display:block;width:100%;max-width:300px;height:100%;position:relative}
+/* Aura: a soft peach glow behind the fruit that breathes slowly. */
+.peach::before{content:"";position:absolute;width:230px;height:230px;left:50%;top:50%;margin:-115px 0 0 -115px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,color-mix(in srgb,#FF9A7A 45%,transparent) 40%,color-mix(in srgb,#FFC98A 22%,transparent) 70%,transparent);filter:blur(4px)}
+@media (prefers-reduced-motion:no-preference){.peach::before{animation:aura 5s ease-in-out infinite}}
+@keyframes aura{0%,100%{transform:scale(.94);opacity:.75}50%{transform:scale(1.06);opacity:1}}
+@media (max-width:720px){header{grid-template-columns:minmax(0,1fr)}.peach{height:170px;order:-1}}
+.code{font-size:.95rem;font-weight:500;color:var(--muted)}
+h1{font-size:clamp(1.9rem,4.6vw,2.6rem);font-weight:700;line-height:1.12}
+dl.meta{display:flex;flex-wrap:wrap;gap:10px 36px;margin:6px 0 0}
+dl.meta div{display:grid;gap:2px}
+dl.meta dt{font-size:.85rem;color:var(--muted)}
+dl.meta dd{margin:0;font-weight:500}
+
+nav.jump{display:flex;flex-wrap:wrap;gap:6px 20px;padding-block:14px;border-bottom:1px solid var(--rule);font-size:.95rem}
+nav.jump a{color:var(--muted);text-decoration:none}
+nav.jump a:hover{color:var(--fg)}
+
+section{padding-block:36px;display:grid;gap:16px;border-bottom:1px solid var(--rule)}
+section>*{min-width:0}
+h2{font-size:1.4rem;font-weight:700}
+h3{font-size:1.1rem;font-weight:600}
+.about{display:grid;gap:12px;max-width:72ch}
+.art{margin:0}
+.art img{display:block;width:100%;height:auto;border-radius:12px}
+/* Description: text beside the whiteboard picture on wide screens. */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:20px 48px;align-items:center}
+@media (max-width:860px){.split{grid-template-columns:minmax(0,1fr)}.split .art{max-width:520px}}
+/* Paint on the wall: the picture's edges are torn and uneven, as if brushed straight onto the wall. */
+.painted img{border-radius:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22 preserveAspectRatio=%22none%22%3E%3Cfilter id=%22r%22 x=%22-10%%22 y=%22-10%%22 width=%22120%%22 height=%22120%%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.018 0.05%22 numOctaves=%224%22 seed=%2211%22 result=%22n%22/%3E%3CfeDisplacementMap in=%22SourceGraphic%22 in2=%22n%22 scale=%2246%22 xChannelSelector=%22R%22 yChannelSelector=%22G%22/%3E%3C/filter%3E%3Cg filter=%22url(%23r)%22 fill=%22%23000%22%3E%3Crect x=%2234%22 y=%2230%22 width=%22732%22 height=%22440%22/%3E%3Crect x=%2210%22 y=%22120%22 width=%2260%22 height=%2222%22/%3E%3Crect x=%22740%22 y=%22330%22 width=%2252%22 height=%2218%22/%3E%3Crect x=%22210%22 y=%228%22 width=%2290%22 height=%2226%22/%3E%3Crect x=%22520%22 y=%22468%22 width=%22110%22 height=%2222%22/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22 preserveAspectRatio=%22none%22%3E%3Cfilter id=%22r%22 x=%22-10%%22 y=%22-10%%22 width=%22120%%22 height=%22120%%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.018 0.05%22 numOctaves=%224%22 seed=%2211%22 result=%22n%22/%3E%3CfeDisplacementMap in=%22SourceGraphic%22 in2=%22n%22 scale=%2246%22 xChannelSelector=%22R%22 yChannelSelector=%22G%22/%3E%3C/filter%3E%3Cg filter=%22url(%23r)%22 fill=%22%23000%22%3E%3Crect x=%2234%22 y=%2230%22 width=%22732%22 height=%22440%22/%3E%3Crect x=%2210%22 y=%22120%22 width=%2260%22 height=%2222%22/%3E%3Crect x=%22740%22 y=%22330%22 width=%2252%22 height=%2218%22/%3E%3Crect x=%22210%22 y=%228%22 width=%2290%22 height=%2226%22/%3E%3Crect x=%22520%22 y=%22468%22 width=%22110%22 height=%2222%22/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat}
+
+.lead{font-size:1.15rem;max-width:60ch}
+/* Studios: one card per role, each showing that person cropped from the studio picture.
+   The picture is shown at 480% of the card width; each margin-left centres one person (at 25%, 50%, 75% of its width). */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;width:100%;max-width:1000px;justify-self:center}
+.card{display:grid;align-content:start;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--bg)}
+.crop{aspect-ratio:1/1;overflow:hidden;background:#F4EDE2}
+.crop img{display:block;width:480%;max-width:none;height:auto;margin-top:-97%}
+.card .body{display:grid;gap:8px;padding:16px 18px 20px}
+.card h3{display:flex;align-items:center;gap:8px}
+.card h3 i{width:12px;height:12px;border-radius:50%;flex:none}
+.card .uses{color:var(--muted);font-size:.9rem}
+@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr)}.crop{aspect-ratio:4/3}}
+
+.staff{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 16px}
+@media (max-width:560px){.staff{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.staff li{min-width:0}
+.staff li,.staff a{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none;border-radius:10px}
+.staff .ph{flex:none;width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:1.25rem;transition:transform .15s ease}
+.staff a:hover .ph,.staff a:focus-visible .ph{transform:scale(1.08)}
+.staff a:hover b,.staff a:focus-visible b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.staff a:focus-visible{outline:2px solid var(--focus);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){.staff .ph{transition:none}}
+.staff li>span:last-child,.staff a>span:last-child{display:grid;gap:2px;min-width:0}
+.staff b{font-weight:700;overflow-wrap:anywhere}
+.staff small{color:var(--muted);font-size:.9rem}
+
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--rule)}
+th{font-weight:600;color:var(--muted);font-size:.95rem}
+td small{display:block;color:var(--muted);font-size:.85rem}
+#schedule table{min-width:640px}
+td.wk{font-weight:600;white-space:nowrap;width:1%}
+td.date{white-space:nowrap;width:1%;color:var(--muted)}
+td.theme{font-weight:500}
+tr.off td{color:var(--muted)}
+tr.now td{background:var(--tint)}
+tr.now td.wk{color:var(--accent)}
+.key{color:var(--muted);font-size:.9rem}
+
+th.ln{font-size:.85rem;white-space:nowrap}
+td.ln{position:relative;vertical-align:middle;white-space:nowrap;font-size:.9rem;padding:8px 8px 8px 30px;width:1%;min-width:130px}
+td.ln.two{padding-left:48px}
+td.ln .bar,td.ln .blk{position:absolute;width:5px;border-radius:3px}
+td.ln .bar{left:13px}
+td.ln .pt{position:absolute;left:9px;top:50%;width:13px;height:13px;margin-top:-6.5px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+td.ln .pl{color:var(--accent);font-weight:600;display:block;line-height:1.25}
+td.ln .pl small{font-weight:400}
+
+
+#grading .cols{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:40px;align-items:start}
+@media (max-width:820px){#grading .cols{grid-template-columns:minmax(0,1fr)}}
+#grading table td,#grading table th{vertical-align:middle}
+td.w{width:45%;padding-right:20px}
+td.w span{display:block;height:10px;border-radius:5px;background:var(--accent)}
+@media (max-width:560px){td.w{width:28%;padding-right:10px}}
+tr.sub td{color:var(--muted);font-size:.92rem;padding-block:5px}
+tr.sub td:first-child{padding-left:24px}
+tr.sub td.w span{height:6px;background:var(--bar)}
+#grading td:last-child,#grading th:last-child{text-align:right}
+tfoot td{font-weight:700;border-bottom:0}
+table.scale{max-width:280px}
+
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px}
+.rules article{display:grid;gap:10px;align-content:start}
+.rules ul{padding-left:1.2em;display:grid;gap:4px}
+@media (max-width:720px){.rules{grid-template-columns:minmax(0,1fr)}}
+
+footer{padding-block:24px 40px;font-size:.95rem;display:grid;gap:4px}
+
+/* First screen: a full-bleed stage. Title at the top, the desk with the pile of registration forms low and centred. */
+.hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);height:100svh;min-height:560px;overflow:hidden;border-bottom:1px solid var(--rule);
+  background:radial-gradient(120% 70% at 50% 78%,var(--bg) 0%,var(--bg) 35%,var(--row) 100%)}
+.desk{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;pointer-events:none;background:linear-gradient(transparent,var(--bg) 85%)}
+.hero .copy{z-index:1}
+.desk.on{opacity:1}
+.desk canvas{display:block;width:100%;height:100%;touch-action:pan-y}
+.hero .copy{position:absolute;inset:0;pointer-events:none;display:grid;grid-template-rows:auto auto 1fr auto;justify-items:center;
+  padding:20px max(16px,env(safe-area-inset-left,0px)) 22px;text-align:center}
+.hero .copy a{pointer-events:auto}
+.hero .back{justify-self:start;font-size:.95rem;font-weight:500;color:var(--muted);text-decoration:none}
+.hero .back:hover{color:var(--fg)}
+.hero h1{margin-top:clamp(8px,4svh,40px);font-size:clamp(4.2rem,15vw,12.5rem);line-height:.9;letter-spacing:-.05em;font-weight:800}
+.hero h1{background:linear-gradient(172deg,var(--fg) 38%,var(--title-end) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .1em .06em;margin-inline:-.1em}
+:root{--title-end:#2F4FB8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--title-end:#8FA8FF}}
+:root[data-theme="dark"]{--title-end:#8FA8FF}
+.hero .sub{margin-top:clamp(10px,1.6vw,18px);font-size:clamp(1.25rem,2.6vw,2rem);font-weight:600;letter-spacing:-.01em;color:var(--muted)}
+.hero .down{grid-row:4;color:var(--accent);font-weight:600;text-decoration:none;font-size:.95rem}
+.hero .down:hover{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.desk{transition:none}}
+
+/* Writing scene: the camera moves onto the top form, then the paper becomes a form you can fill in. */
+.hero .copy{transition:opacity .45s ease,transform .45s ease}
+.hero.writing .copy{opacity:0;transform:translateY(-14px);pointer-events:none}
+.hero.writing .copy a{pointer-events:none}
+.hero.writing::after{opacity:0}
+.hero::after{transition:opacity .45s ease}
+.desk.pick canvas{cursor:pointer}
+.sr-btn{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);z-index:2;opacity:0;pointer-events:none;font:inherit;font-weight:600;border:0;border-radius:999px;padding:10px 16px;background:var(--accent);color:#fff}
+.sr-btn:focus-visible{opacity:1;pointer-events:auto}
+.writer{position:fixed;inset:0;z-index:50;overflow-y:auto;overscroll-behavior:contain;display:none;padding:28px 16px 48px}
+.writer.show{display:block}
+.writer{background:rgba(15,17,21,0);transition:background .4s ease}
+.writer.in{background:rgba(15,17,21,.22)}
+.writer .paper{--paper:#FBF8F1;--print:#33323A;--soft:#8B8780;--hair:#B9B4AA;--ink:#1B3A9E;--red:#C8313A;
+  margin:0 auto;width:min(720px,100%);background:var(--paper);color:var(--print);border-radius:2px;padding:clamp(22px,5vw,44px) clamp(18px,5vw,48px) 30px;
+  box-shadow:0 30px 80px rgba(15,17,21,.28),0 2px 8px rgba(15,17,21,.1);opacity:0;transform:translateY(18px) scale(.985);
+  transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.writer.in .paper{opacity:1;transform:none}
+.writer.sent .paper{opacity:0;transform:translateY(-60vh) rotate(-4deg) scale(.9);transition:opacity .5s ease .15s,transform .65s cubic-bezier(.5,0,.75,0)}
+.writer .bar{display:flex;justify-content:space-between;align-items:center;width:min(720px,100%);margin:0 auto 12px;gap:12px}
+.writer .bar button{font:inherit;font-weight:600;border:0;background:var(--bg);color:var(--fg);border-radius:999px;padding:8px 14px;box-shadow:0 2px 10px rgba(15,17,21,.12);cursor:pointer}
+.writer .bar .who{font-size:.9rem;color:var(--fg);background:var(--bg);border-radius:999px;padding:6px 12px;box-shadow:0 2px 10px rgba(15,17,21,.1)}
+.paper .m-head{display:flex;justify-content:space-between;align-items:start;gap:10px;padding-bottom:8px;border-bottom:2px solid var(--print)}
+.paper .m-org{font-size:.72rem;font-weight:700;letter-spacing:.03em}
+.paper .m-no{border:1px solid var(--print);font-size:.75rem;font-weight:700;padding:1px 6px;white-space:nowrap}
+.paper h2{margin:18px 0 2px;font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.paper .lede{color:var(--soft)}
+.paper .sec{margin-top:22px;display:grid;gap:10px}
+.paper h3{display:flex;align-items:center;gap:10px;font-size:1.1rem;font-weight:700}
+.paper h3 .n{width:24px;height:24px;border-radius:50%;background:var(--print);color:var(--paper);display:grid;place-items:center;font-size:.8rem}
+.paper .f{display:grid;gap:2px}
+.paper .f>span{font-size:.82rem;color:var(--soft)}
+.paper input[type=text],.paper input[type=url]{font:500 1.08rem/1.4 var(--font);color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--hair);padding:6px 2px;width:100%;min-width:0;border-radius:0}
+.paper input::placeholder{color:#C9C3B8;font-weight:400}
+.paper input:focus{outline:0;border-bottom:2px solid var(--ink);padding-bottom:5px}
+.paper .two{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+.paper table{width:100%;border-collapse:collapse}
+.paper th{text-align:left;font-size:.78rem;font-weight:600;color:var(--soft);padding:0 6px 6px 0;border-bottom:1.5px solid var(--print)}
+.paper td{padding:8px 8px 8px 0;border-bottom:1px solid var(--hair);vertical-align:middle}
+.paper td input[type=text]{border-bottom:0;padding:4px 2px}
+.paper td input:focus{border-bottom:2px solid var(--ink);padding-bottom:2px}
+.paper .role{display:flex;align-items:center;gap:8px;font-weight:600;white-space:nowrap;width:150px}
+.paper .role svg{width:30px;height:30px;flex:none}
+.paper .id{width:130px}
+.paper .tick{display:flex;gap:10px;align-items:start;cursor:pointer}
+.paper .tick input{appearance:none;-webkit-appearance:none;width:20px;height:20px;border:1.5px solid var(--print);border-radius:3px;flex:none;margin-top:2px;display:grid;place-items:center;cursor:pointer}
+.paper .tick input:checked::after{content:"";width:11px;height:6px;border:solid var(--ink);border-width:0 0 3px 3px;transform:translateY(-2px) rotate(-45deg)}
+.paper .tick input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.paper .bad input[type=text],.paper .bad input[type=url]{border-bottom-color:var(--red)}
+.paper .bad.tick input,.paper tr.bad .role{border-color:var(--red);color:var(--red)}
+.paper .msg{color:var(--red);font-size:.85rem;font-weight:500}
+.paper .note{margin-top:22px;font-size:.85rem;color:var(--soft)}
+.paper .acts{margin-top:22px;padding-top:16px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.paper .acts p{font-size:.88rem;color:var(--soft);max-width:38ch}
+.paper .acts button{font:inherit;font-weight:700;border:0;border-radius:10px;padding:12px 22px;background:#1D4ED8;color:#fff;cursor:pointer}
+.paper .acts button:hover{filter:brightness(1.08)}
+.paper .done{display:grid;gap:14px;justify-items:start}
+.paper .done a{font-weight:700;color:#fff;background:#1D4ED8;border-radius:10px;padding:12px 22px;text-decoration:none}
+body.leaving{opacity:0;transition:opacity .35s ease}
+@media (max-width:560px){.paper .two{grid-template-columns:1fr}.paper .role{width:auto}.paper .role span{display:none}.paper .id{width:96px}}
+@media (prefers-reduced-motion:reduce){.writer .paper,.writer.sent .paper,.hero .copy,body.leaving{transition:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <button type="button" class="sr-btn" id="write-btn">Fill in the Studio Registration Form</button>
+    <div class="desk" id="desk" role="img" aria-label="A classroom desk with a pile of blank Studio Registration Forms and a blue pen"></div>
+    <div class="copy">
+      <a class="back" href="../">&larr; ASS 2026/2</a>
+      <div>
+        <h1>Studios</h1>
+        <p class="sub">Form your new studio here</p>
+      </div>
+      <a class="down" href="#roles">The three roles &darr;</a>
+    </div>
+  </header>
+
+  <section id="roles">
+        <h2>The three roles</h2>
+    <p class="lead">Each studio has three members: a Developer, a Designer and a Business member. You register your studio in class, on one form signed by all three.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="crop"><img src="../illustrations/studio-a.svg?v=2" alt="" style="margin-left:-70%"></div>
+        <div class="body"><h3><i style="background:#3D4E7A"></i>Developer</h3><p>Architecture, agent-driven implementation, code review, testing, deployment</p><p class="uses">Steers agents to build, test, and ship the system</p></div>
+      </article>
+      <article class="card">
+        <div class="crop"><img src="../illustrations/studio-a.svg?v=2" alt="" style="margin-left:-190%"></div>
+        <div class="body"><h3><i style="background:#F0606A"></i>Designer</h3><p>Users, user flows, interface and interaction design, usability evidence</p><p class="uses">Steers agents to generate and iterate interfaces and flows</p></div>
+      </article>
+      <article class="card">
+        <div class="crop"><img src="../illustrations/studio-a.svg?v=2" alt="" style="margin-left:-310%"></div>
+        <div class="body"><h3><i style="background:#E9B949"></i>Business</h3><p>Problem selection, value proposition, market and cost reasoning, pitch narrative</p><p class="uses">Steers agents for market and cost analysis, data, and pitch materials</p></div>
+      </article>
+    </div>
+  </section>
+
+</main>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="role-dev" viewBox="0 0 100 100"><clipPath id="role-dev-c"><circle cx="50" cy="50" r="50"/></clipPath><circle cx="50" cy="50" r="50" fill="#F6F1E8"/><g clip-path="url(#role-dev-c)"><rect x="41" y="68" width="18" height="16" fill="#F2C6A0"/><path d="M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z" fill="#3D4E7A"/><circle cx="50" cy="50" r="25" fill="#F2C6A0"/><path d="M24 52 C23 13 79 11 76 48 C69 36 40 34 24 52Z" fill="#2B2622"/><circle cx="41" cy="52" r="2.6" fill="#2B2A33"/><circle cx="59" cy="52" r="2.6" fill="#2B2A33"/><path d="M44 62 q6 5 12 0" stroke="#2B2A33" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="35" cy="60" r="4" fill="#F0606A" opacity=".25"/><circle cx="65" cy="60" r="4" fill="#F0606A" opacity=".25"/><g fill="none" stroke="#2B2A33" stroke-width="2.4"><circle cx="41" cy="52" r="7"/><circle cx="59" cy="52" r="7"/><path d="M48 52h4"/></g></g></symbol><symbol id="role-des" viewBox="0 0 100 100"><clipPath id="role-des-c"><circle cx="50" cy="50" r="50"/></clipPath><circle cx="50" cy="50" r="50" fill="#F6F1E8"/><g clip-path="url(#role-des-c)"><rect x="41" y="68" width="18" height="16" fill="#8D5A3B"/><path d="M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z" fill="#F0606A"/><circle cx="50" cy="50" r="25" fill="#8D5A3B"/><circle cx="54" cy="17" r="12" fill="#1E1B1A"/><path d="M24 54 C22 15 78 15 76 54 C64 38 36 38 24 54Z" fill="#1E1B1A"/><circle cx="41" cy="52" r="2.6" fill="#2B2A33"/><circle cx="59" cy="52" r="2.6" fill="#2B2A33"/><path d="M44 62 q6 5 12 0" stroke="#2B2A33" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="35" cy="60" r="4" fill="#F0606A" opacity=".25"/><circle cx="65" cy="60" r="4" fill="#F0606A" opacity=".25"/></g></symbol><symbol id="role-bus" viewBox="0 0 100 100"><clipPath id="role-bus-c"><circle cx="50" cy="50" r="50"/></clipPath><circle cx="50" cy="50" r="50" fill="#F6F1E8"/><g clip-path="url(#role-bus-c)"><rect x="41" y="68" width="18" height="16" fill="#C98B5E"/><path d="M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z" fill="#E9B949"/><circle cx="50" cy="50" r="25" fill="#C98B5E"/><circle cx="30" cy="44" r="11" fill="#5A3A26"/><circle cx="36" cy="30" r="11" fill="#5A3A26"/><circle cx="50" cy="23" r="11" fill="#5A3A26"/><circle cx="64" cy="30" r="11" fill="#5A3A26"/><circle cx="70" cy="44" r="11" fill="#5A3A26"/><circle cx="44" cy="26" r="11" fill="#5A3A26"/><circle cx="58" cy="24" r="11" fill="#5A3A26"/><circle cx="41" cy="52" r="2.6" fill="#2B2A33"/><circle cx="59" cy="52" r="2.6" fill="#2B2A33"/><path d="M44 62 q6 5 12 0" stroke="#2B2A33" stroke-width="2.2" fill="none" stroke-linecap="round"/><circle cx="35" cy="60" r="4" fill="#F0606A" opacity=".25"/><circle cx="65" cy="60" r="4" fill="#F0606A" opacity=".25"/></g></symbol></svg>
+<div class="writer" id="writer" aria-hidden="true">
+  <div class="bar"><button type="button" data-close>&larr; Back to the desk</button><span class="who" data-who></span></div>
+  <form class="paper" id="s1" novalidate aria-label="Studio Registration Form">
+    <div class="m-head"><span class="m-org">KMITL · AGENTIC SOFTWARE STUDIO 2026/2</span><span class="m-no">Form S-1</span></div>
+    <h2>Studio Registration Form</h2>
+    <p class="lede">One form per studio, filled in together in class.</p>
+    <div data-body>
+    <div class="sec">
+      <h3><span class="n">1</span>Studio</h3>
+      <label class="f" data-k="name"><span>Studio name</span><input type="text" name="name" autocomplete="off"></label>
+    </div>
+    <div class="sec">
+      <h3><span class="n">2</span>Members</h3>
+      <table data-k="members"><thead><tr><th>Role</th><th>Full name</th><th>Student ID</th></tr></thead><tbody>
+        <tr data-k="row-dev"><td class="role"><svg aria-hidden="true"><use href="#role-dev"/></svg><span>Developer</span></td><td><input type="text" name="dev" placeholder="Full name" autocomplete="off" aria-label="Developer full name"></td><td class="id"><input type="text" name="devId" placeholder="8 digits" inputmode="numeric" maxlength="8" autocomplete="off" aria-label="Developer student ID"></td></tr>
+        <tr data-k="row-des"><td class="role"><svg aria-hidden="true"><use href="#role-des"/></svg><span>Designer</span></td><td><input type="text" name="des" placeholder="Full name" autocomplete="off" aria-label="Designer full name"></td><td class="id"><input type="text" name="desId" placeholder="8 digits" inputmode="numeric" maxlength="8" autocomplete="off" aria-label="Designer student ID"></td></tr>
+        <tr data-k="row-bus"><td class="role"><svg aria-hidden="true"><use href="#role-bus"/></svg><span>Business</span></td><td><input type="text" name="bus" placeholder="Full name" autocomplete="off" aria-label="Business member full name"></td><td class="id"><input type="text" name="busId" placeholder="8 digits" inputmode="numeric" maxlength="8" autocomplete="off" aria-label="Business member student ID"></td></tr>
+      </tbody></table>
+    </div>
+    <div class="sec">
+      <h3><span class="n">3</span>Studio setup</h3>
+      <div class="two">
+        <label class="f" data-k="repo"><span>GitHub organization</span><input type="url" name="repo" placeholder="github.com/your-studio" autocomplete="off"></label>
+        <label class="f" data-k="chat"><span>Discord</span><input type="url" name="chat" placeholder="Invite link" autocomplete="off"></label>
+        <label class="f" data-k="meet"><span>Weekly meeting</span><input type="text" name="meet" placeholder="e.g. Wed 19:00, online" autocomplete="off"></label>
+      </div>
+      <label class="tick" data-k="invited"><input type="checkbox" name="invited"><span>We have invited Guide and Nueng to our GitHub organization and Discord.</span></label>
+    </div>
+    <div class="sec">
+      <h3><span class="n">4</span>Agreement</h3>
+      <label class="tick" data-k="agreeStd"><input type="checkbox" name="agreeStd"><span>All three of us have read the Course Standard and will defend what our agents build.</span></label>
+      <label class="tick" data-k="agreeAgent"><input type="checkbox" name="agreeAgent"><span>Each of us has our own coding-agent access.</span></label>
+    </div>
+    <p class="note">Note: At the start of each sprint, you may dissolve your studio with the Studio Dissolution form, then register a new studio or work on your own. We suggest you keep your studio.</p>
+    <div class="acts"><p>Next, it goes to your board. All three of you sign it there.</p><button type="submit">Submit</button></div>
+    </div>
+  </form>
+</div>
+
+
+<footer class="wrap muted">
+  <p>&copy; 2026 Yuttapichai Kerdcharoen. All rights reserved.</p>
+</footer>
+
+<script src="../auth.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module">
+/* A desk with a pile of blank Studio Registration Forms (S-1) and a pen.
+   The form on each sheet is drawn on a canvas so it matches the paper students fill in on the Pinboard. */
+import * as THREE from 'three';
+import {DecalGeometry} from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/geometries/DecalGeometry.js';
+
+const box = document.getElementById('desk');
+const ROLES = {"dev": "<clipPath id=\"role-dev-c\"><circle cx=\"50\" cy=\"50\" r=\"50\"/></clipPath><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"#F6F1E8\"/><g clip-path=\"url(#role-dev-c)\"><rect x=\"41\" y=\"68\" width=\"18\" height=\"16\" fill=\"#F2C6A0\"/><path d=\"M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z\" fill=\"#3D4E7A\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#F2C6A0\"/><path d=\"M24 52 C23 13 79 11 76 48 C69 36 40 34 24 52Z\" fill=\"#2B2622\"/><circle cx=\"41\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><circle cx=\"59\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><path d=\"M44 62 q6 5 12 0\" stroke=\"#2B2A33\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"35\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/><circle cx=\"65\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/><g fill=\"none\" stroke=\"#2B2A33\" stroke-width=\"2.4\"><circle cx=\"41\" cy=\"52\" r=\"7\"/><circle cx=\"59\" cy=\"52\" r=\"7\"/><path d=\"M48 52h4\"/></g></g>", "des": "<clipPath id=\"role-des-c\"><circle cx=\"50\" cy=\"50\" r=\"50\"/></clipPath><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"#F6F1E8\"/><g clip-path=\"url(#role-des-c)\"><rect x=\"41\" y=\"68\" width=\"18\" height=\"16\" fill=\"#8D5A3B\"/><path d=\"M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z\" fill=\"#F0606A\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#8D5A3B\"/><circle cx=\"54\" cy=\"17\" r=\"12\" fill=\"#1E1B1A\"/><path d=\"M24 54 C22 15 78 15 76 54 C64 38 36 38 24 54Z\" fill=\"#1E1B1A\"/><circle cx=\"41\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><circle cx=\"59\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><path d=\"M44 62 q6 5 12 0\" stroke=\"#2B2A33\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"35\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/><circle cx=\"65\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/></g>", "bus": "<clipPath id=\"role-bus-c\"><circle cx=\"50\" cy=\"50\" r=\"50\"/></clipPath><circle cx=\"50\" cy=\"50\" r=\"50\" fill=\"#F6F1E8\"/><g clip-path=\"url(#role-bus-c)\"><rect x=\"41\" y=\"68\" width=\"18\" height=\"16\" fill=\"#C98B5E\"/><path d=\"M10 104 Q10 80 34 78 L66 78 Q90 80 90 104Z\" fill=\"#E9B949\"/><circle cx=\"50\" cy=\"50\" r=\"25\" fill=\"#C98B5E\"/><circle cx=\"30\" cy=\"44\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"36\" cy=\"30\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"50\" cy=\"23\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"64\" cy=\"30\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"70\" cy=\"44\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"44\" cy=\"26\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"58\" cy=\"24\" r=\"11\" fill=\"#5A3A26\"/><circle cx=\"41\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><circle cx=\"59\" cy=\"52\" r=\"2.6\" fill=\"#2B2A33\"/><path d=\"M44 62 q6 5 12 0\" stroke=\"#2B2A33\" stroke-width=\"2.2\" fill=\"none\" stroke-linecap=\"round\"/><circle cx=\"35\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/><circle cx=\"65\" cy=\"60\" r=\"4\" fill=\"#F0606A\" opacity=\".25\"/></g>"};
+
+/* ---------- The form, drawn at 150 dpi on Letter paper ---------- */
+const PW = 1275, PH = 1650;
+const INK = '#33323A', SOFT = '#8B8780', HAIR = '#B9B4AA', PAPER = '#FBF8F1';
+const roleImg = k => new Promise(res => {
+  const im = new Image();
+  im.onload = () => res(im); im.onerror = () => res(null);
+  im.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">${ROLES[k]}</svg>`);
+});
+
+async function drawForm() {
+  try { await document.fonts.load('600 30px "Instrument Sans"'); await document.fonts.load('400 30px "Instrument Sans"'); await document.fonts.load('600 30px Fraunces'); } catch (e) {}
+  const icons = await Promise.all(['dev', 'des', 'bus'].map(roleImg));
+  const c = document.createElement('canvas'); c.width = PW; c.height = PH;
+  const g = c.getContext('2d');
+  const F = (w, px) => `${w} ${px}px "Instrument Sans", system-ui, sans-serif`;
+  const M = 96, R = PW - M;
+  const line = (x1, y, x2, col = HAIR, w = 2) => { g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.moveTo(x1, y); g.lineTo(x2, y); g.stroke(); };
+  const text = (t, x, y, font, col = INK, align = 'left') => { g.font = font; g.fillStyle = col; g.textAlign = align; g.fillText(t, x, y); };
+  const tick = (x, y) => { g.strokeStyle = INK; g.lineWidth = 2.5; g.strokeRect(x, y - 24, 28, 28); };
+  const sec = (n, t, y) => {
+    g.fillStyle = INK; g.beginPath(); g.arc(M + 18, y - 11, 18, 0, 7); g.fill();
+    text(String(n), M + 18, y - 1, F(700, 22), PAPER, 'center');
+    text(t, M + 50, y, F(700, 30));
+  };
+
+  g.fillStyle = PAPER; g.fillRect(0, 0, PW, PH);
+
+  // Header
+  text('KMITL  ·  AGENTIC SOFTWARE STUDIO 2026/2', M, 112, F(700, 21));
+  g.font = F(700, 22); const no = 'Form S-1', nw = g.measureText(no).width + 26;
+  g.strokeStyle = INK; g.lineWidth = 2; g.strokeRect(R - nw, 84, nw, 38);
+  text(no, R - nw / 2, 111, F(700, 22), INK, 'center');
+  line(M, 140, R, INK, 3);
+  text('Studio Registration Form', M, 222, F(700, 58));
+  text('One form per studio, filled in together in class.', M, 270, F(400, 27), SOFT);
+
+  // 1 Studio
+  sec(1, 'Studio', 352);
+  text('Studio name', M, 400, F(400, 22), SOFT);
+  line(M, 452, R);
+
+  // 2 Members
+  sec(2, 'Members', 530);
+  const c1 = M, c2 = M + 270, c3 = M + 790;
+  text('Role', c1, 578, F(600, 21), SOFT); text('Full name', c2, 578, F(600, 21), SOFT); text('Student ID', c3, 578, F(600, 21), SOFT);
+  line(M, 594, R, INK, 2);
+  ['Developer', 'Designer', 'Business'].forEach((r, i) => {
+    const y = 594 + i * 82;
+    if (icons[i]) g.drawImage(icons[i], c1, y + 14, 54, 54);
+    text(r, c1 + 68, y + 50, F(600, 25));
+    line(M, y + 82, R);
+  });
+
+  // 3 Studio setup
+  sec(3, 'Studio setup', 912);
+  const mid = M + (R - M) / 2 + 12;
+  text('GitHub organization', M, 958, F(400, 22), SOFT); line(M, 1006, mid - 30);
+  text('Discord', mid, 958, F(400, 22), SOFT); line(mid, 1006, R);
+  text('Weekly meeting', M, 1046, F(400, 22), SOFT); line(M, 1094, mid - 30);
+  tick(M, 1146); text('We have invited Guide and Nueng to our GitHub organization and Discord.', M + 46, 1144, F(400, 23));
+
+  // 4 Agreement
+  sec(4, 'Agreement', 1224);
+  tick(M, 1272); text('All three of us have read the Course Standard and will defend what our agents build.', M + 46, 1270, F(400, 23));
+  tick(M, 1316); text('Each of us has our own coding-agent access.', M + 46, 1314, F(400, 23));
+
+  // 5 Signatures
+  sec(5, 'Signatures', 1396);
+  const sw = (R - M - 60) / 3;
+  ['Developer', 'Designer', 'Business'].forEach((r, i) => {
+    const x = M + i * (sw + 30);
+    line(x, 1484, x + sw, INK, 2);
+    if (icons[i]) g.drawImage(icons[i], x, 1496, 30, 30);
+    text(r, x + 40, 1519, F(400, 21), SOFT);
+  });
+
+  text('Note: At the start of each sprint, you may dissolve your studio with the Studio Dissolution form,', M, 1580, F(400, 20), SOFT);
+  text('then register a new studio or work on your own. We suggest you keep your studio.', M, 1606, F(400, 20), SOFT);
+  return c;
+}
+
+/* ---------- Scene ---------- */
+let renderer;
+try { renderer = new THREE.WebGLRenderer({antialias: true, alpha: true}); } catch (e) { renderer = null; }
+if (!renderer) box.classList.add('off');
+else (async () => {
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  box.appendChild(renderer.domElement);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(30, 1, .1, 60);
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Light
+  scene.add(new THREE.HemisphereLight('#FFFFFF', '#B8BDC8', .75));
+  const key = new THREE.DirectionalLight('#FFFFFF', 2.6);
+  key.position.set(-2.6, 6, 1.6); key.castShadow = true;
+  key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 6; key.shadow.bias = -.0004; key.shadow.normalBias = .01;
+  Object.assign(key.shadow.camera, {left: -3.6, right: 3.6, top: 3.6, bottom: -3.6, near: .5, far: 14});
+  scene.add(key);
+  const fill = new THREE.DirectionalLight('#DCE4FF', .5); fill.position.set(3, 2, -2); scene.add(fill);
+
+  // Desk: light-gray laminate top, dark steel legs
+  const TW = 2.4, TD = 1.7, TT = .07, LEG = 2.9;
+  const top = new THREE.Mesh(new THREE.BoxGeometry(TW, TT, TD), [
+    ...Array(2).fill(new THREE.MeshStandardMaterial({color: '#C9CDD4', roughness: .6})),
+    new THREE.MeshStandardMaterial({color: '#E4E6EA', roughness: .72}),
+    new THREE.MeshStandardMaterial({color: '#C9CDD4', roughness: .6}),
+    ...Array(2).fill(new THREE.MeshStandardMaterial({color: '#C9CDD4', roughness: .6})),
+  ]);
+  top.position.y = -TT / 2; top.receiveShadow = true; top.castShadow = true; scene.add(top);
+  const legMat = new THREE.MeshStandardMaterial({color: '#23262C', roughness: .45, metalness: .5});
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) {
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(.05, LEG, .05), legMat);
+    leg.position.set(sx * (TW / 2 - .1), -TT - LEG / 2, sz * (TD / 2 - .1)); leg.castShadow = true; scene.add(leg);
+  }
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(16, 16), new THREE.ShadowMaterial({opacity: .13}));
+  floor.rotation.x = -Math.PI / 2; floor.position.y = -TT - LEG; floor.receiveShadow = true; scene.add(floor);
+  const rail = new THREE.Mesh(new THREE.BoxGeometry(TW - .2, .05, .03), legMat);
+  rail.position.set(0, -TT - .045, -(TD / 2 - .1)); scene.add(rail);
+
+  // Paper pile
+  const tex = new THREE.CanvasTexture(await drawForm());
+  tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  const SW = .85, SD = 1.1, ST = .004;
+  const edge = new THREE.MeshStandardMaterial({color: '#EEEAE2', roughness: .9});
+  const face = new THREE.MeshStandardMaterial({map: tex, roughness: .88});
+  const back = new THREE.MeshStandardMaterial({color: PAPER, roughness: .9});
+  const sheetGeo = new THREE.BoxGeometry(SW, ST, SD);
+  const mats = [edge, edge, face, back, edge, edge];
+  const pile = new THREE.Group(); pile.position.set(-.32, 0, .08); scene.add(pile);
+  const rnd = (a => () => (a = (a * 16807) % 2147483647) / 2147483647)(7);
+  const N = 18, sheets = [];
+  for (let i = 0; i < N; i++) {
+    const s = new THREE.Mesh(sheetGeo, mats);
+    const topOne = i === N - 1;
+    const rest = {
+      x: (rnd() - .5) * .05, z: (rnd() - .5) * .05,
+      y: ST / 2 + i * ST,
+      r: topOne ? -.11 : (rnd() - .5) * .14,
+    };
+    s.userData = {rest, delay: i * 55, lift: 0};
+    s.castShadow = true; s.receiveShadow = true;
+    pile.add(s); sheets.push(s);
+  }
+  const topSheet = sheets[N - 1];
+
+  // Pen, in the site's blue
+  const pen = new THREE.Group();
+  const blue = new THREE.MeshStandardMaterial({color: '#1D4ED8', roughness: .35, metalness: .1});
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(.018, .018, .5, 24), blue); body.rotation.z = Math.PI / 2; pen.add(body);
+  const grip = new THREE.Mesh(new THREE.CylinderGeometry(.019, .016, .09, 24), new THREE.MeshStandardMaterial({color: '#23262C', roughness: .7}));
+  grip.rotation.z = Math.PI / 2; grip.position.x = -.29; pen.add(grip);
+  const tip = new THREE.Mesh(new THREE.ConeGeometry(.016, .05, 24), new THREE.MeshStandardMaterial({color: '#C9CDD4', metalness: .8, roughness: .3}));
+  tip.rotation.z = Math.PI / 2; tip.position.x = -.36; pen.add(tip);
+  const clip = new THREE.Mesh(new THREE.BoxGeometry(.16, .006, .012), new THREE.MeshStandardMaterial({color: '#E4E6EA', metalness: .8, roughness: .3}));
+  clip.position.set(.15, .022, 0); pen.add(clip);
+  pen.traverse(o => { o.castShadow = true; });
+  pen.position.set(.58, .019, .28); pen.rotation.y = .62; scene.add(pen);
+
+  // The ASS peach, sitting on the desk like a doll (same model as the home page).
+  const makePeach = () => {
+    const S = THREE.MathUtils.smoothstep;
+    // Body: a sphere pushed into a heart-like peach. The cleft runs down the front; the two lobes bulge either side of it.
+    const geo = new THREE.SphereGeometry(1, 160, 120);
+    const pos = geo.attributes.position, col = [], v = new THREE.Vector3(), n = new THREE.Vector3(), c = new THREE.Color();
+    const top = new THREE.Color('#FFC452'), mid = new THREE.Color('#FF8F3E'), coral = new THREE.Color('#F0475A');
+    const blushDir = new THREE.Vector3(.85, -.3, -.2).normalize();
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i);
+      const az = Math.atan2(v.x, v.z), ring = Math.sqrt(Math.max(0, 1 - v.y * v.y));
+      let r = 1;
+      r -= .15 * Math.exp(-(az * az) / .012) * Math.pow(ring, .45) * S(v.y, .3, .7); // the cleft, from the top notch down to above the face
+      r += .05 * Math.exp(-Math.pow(Math.abs(az) - .55, 2) / .06) * ring;                // plump lobes beside it
+      r -= .22 * Math.exp(-Math.pow(1 - v.y, 2) / .018);                                 // stem hollow
+      r += .1 * Math.pow(Math.max(0, -v.y), 5) * Math.exp(-(az * az) / .5);              // soft point at the bottom front
+      v.multiplyScalar(r); v.x *= 1.06; v.y *= .95;
+      pos.setXYZ(i, v.x, v.y, v.z);
+      n.copy(v).normalize();
+      c.copy(top).lerp(mid, S(-n.y, -.75, .1));                                          // yellow crown into orange
+      c.lerp(coral, Math.max(S(n.dot(blushDir), -.1, .75) * .9, S(-n.y, .1, .9) * .6, .06)); // coral blush, deepest low on one side
+      col.push(c.r, c.g, c.b);
+    }
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    geo.computeVertexNormals();
+    const body = new THREE.Mesh(geo, new THREE.MeshPhysicalMaterial({
+      vertexColors:true, roughness:.85, metalness:0, sheen:1, sheenColor:new THREE.Color('#FFE3CC'), sheenRoughness:.8
+    }));
+    const peach = new THREE.Group(); peach.add(body);
+
+    // Stem
+    const stem = new THREE.Mesh(new THREE.CylinderGeometry(.045, .065, .26, 20), new THREE.MeshStandardMaterial({color:'#7B4B2A', roughness:.7}));
+    stem.position.set(.02, .85, 0); stem.rotation.z = -.2; peach.add(stem);
+
+    // Leaves: a curved, pointed blade with a lighter midrib, used twice at different sizes.
+    const leafGeo = () => {
+      const g = new THREE.PlaneGeometry(1, 1, 40, 12), p = g.attributes.position, cl = [];
+      const dark = new THREE.Color('#2E9A47'), light = new THREE.Color('#7FD86A');
+      for (let i = 0; i < p.count; i++) {
+        const u = p.getX(i) + .5, w = p.getY(i);                         // u: base 0 → tip 1, w: across -.5 … .5
+        const half = Math.sin(Math.PI * Math.pow(u, .8)) * .5 * (1 - u * .25);
+        const y = w * 2 * half * .36;
+        p.setXYZ(i, u, y, -Math.abs(w) * .1 + Math.sin(u * Math.PI) * .12 - u * u * .1);
+        c.copy(dark).lerp(light, (1 - Math.abs(w) * 2) * .6 + u * .2);
+        cl.push(c.r, c.g, c.b);
+      }
+      g.setAttribute('color', new THREE.Float32BufferAttribute(cl, 3));
+      g.computeVertexNormals(); return g;
+    };
+    const leafMat = new THREE.MeshStandardMaterial({vertexColors:true, roughness:.45, side:THREE.DoubleSide});
+    const big = new THREE.Mesh(leafGeo(), leafMat); big.scale.set(.85, 1.2, 1); big.position.set(.04, .9, .02); big.rotation.set(-.35, -.4, .5); peach.add(big);
+    const small = new THREE.Mesh(leafGeo(), leafMat); small.scale.set(.55, .8, 1); small.position.set(0, .9, -.03); small.rotation.set(.3, 2.6, .55); peach.add(small);
+    // Doll limbs: stubby arms and two little feet, in plush peach.
+    const plush = new THREE.MeshPhysicalMaterial({color: '#FFAA66', roughness: .85, sheen: 1, sheenColor: new THREE.Color('#FFE3CC'), sheenRoughness: .8});
+    for (const sx of [-1, 1]) {
+      const arm = new THREE.Mesh(new THREE.SphereGeometry(.2, 24, 16), plush);
+      arm.scale.set(.62, 1.15, .62); arm.position.set(sx * 1.02, -.2, .18); arm.rotation.z = sx * .55; peach.add(arm);
+      const foot = new THREE.Mesh(new THREE.SphereGeometry(.24, 24, 16), plush);
+      foot.scale.set(1, .55, 1.35); foot.position.set(sx * .36, -.88, .5); peach.add(foot);
+    }
+    peach.userData.body = body;
+    body.castShadow = true; peach.traverse(o => { if (o.isMesh) o.castShadow = true; });
+    return peach;
+  };
+  const doll = makePeach();
+  const PS = .14;
+  doll.scale.setScalar(PS);
+  doll.position.set(.82, 1.0 * PS, -.38);
+  doll.rotation.set(.04, -.25, 0);
+  let hopAt = -1e9, overDoll = false;
+  scene.add(doll);
+  // Its own soft light, so it keeps the bright home-page colours without washing out the paper.
+  // A flat, drawn face on the cheek away from the cleft, so it still reads as a peach.
+  const drawFace = closed => {
+    const c = document.createElement('canvas'); c.width = 512; c.height = 400;
+    const g = c.getContext('2d');
+    for (const x of [118, 394]) {                      // cheeks
+      const r = g.createRadialGradient(x, 250, 0, x, 250, 70);
+      r.addColorStop(0, 'rgba(255,92,122,.55)'); r.addColorStop(1, 'rgba(255,92,122,0)');
+      g.fillStyle = r; g.fillRect(x - 80, 170, 160, 160);
+    }
+    g.fillStyle = '#2B1A17'; g.strokeStyle = '#2B1A17'; g.lineCap = 'round';
+    for (const x of [178, 334]) {                      // eyes
+      if (closed) { g.lineWidth = 12; g.beginPath(); g.arc(x, 170, 26, .15 * Math.PI, .85 * Math.PI); g.stroke(); continue; }
+      g.beginPath(); g.ellipse(x, 176, 30, 38, 0, 0, 7); g.fill();
+      g.fillStyle = '#FFFFFF';
+      g.beginPath(); g.arc(x - 9, 162, 11, 0, 7); g.fill();
+      g.beginPath(); g.arc(x + 11, 192, 5, 0, 7); g.fill();
+      g.fillStyle = '#2B1A17';
+    }
+    g.lineWidth = 10; g.beginPath();                    // smile
+    g.arc(240, 238, 16, .1 * Math.PI, .9 * Math.PI); g.arc(272, 238, 16, .1 * Math.PI, .9 * Math.PI); g.stroke();
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t;
+  };
+  const faceOpen = drawFace(false), faceShut = drawFace(true);
+  const pBody = doll.userData.body;
+  doll.updateMatrixWorld(true);
+  {
+    const az = 0, el = .08;                           // where the face sits on the body, in its own space
+    const dirL = new THREE.Vector3(Math.sin(az) * Math.cos(el), Math.sin(el), Math.cos(az) * Math.cos(el));
+    const from = pBody.localToWorld(dirL.clone().multiplyScalar(3)), to = pBody.localToWorld(new THREE.Vector3());
+    const hit = new THREE.Raycaster(from, to.clone().sub(from).normalize()).intersectObject(pBody)[0];
+    if (hit) {
+      const n = hit.face.normal.clone().transformDirection(pBody.matrixWorld);
+      const o = new THREE.Object3D(); o.position.copy(hit.point); o.lookAt(hit.point.clone().add(n));
+      const geo = new DecalGeometry(pBody, hit.point, o.rotation, new THREE.Vector3(PS * 1.6, PS * 1.25, PS * .9));
+      geo.applyMatrix4(pBody.matrixWorld.clone().invert());
+      const faceMat = new THREE.MeshStandardMaterial({map: faceOpen, transparent: true, roughness: .5, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -4});
+      const faceMesh = new THREE.Mesh(geo, faceMat);
+      pBody.add(faceMesh);
+      doll.userData.faceMat = faceMat;
+    }
+  }
+  const glow = new THREE.PointLight('#FFC9A0', .7, 1.1, 1.5); glow.position.set(.55, .45, .05); scene.add(glow);
+
+  // Fit the whole desk (legs included) into the box, whatever its shape.
+  const target = new THREE.Vector3(0, -.25, 0);
+  const dir = new THREE.Vector3(0, .66, 1).normalize();
+  const corners = [];
+  for (const x of [-TW / 2, TW / 2]) for (const y of [.1, -.75]) for (const z of [-TD / 2, TD / 2]) corners.push(new THREE.Vector3(x, y, z));
+  let dist = 6, fx = .8;
+  const fits = d => {
+    camera.position.copy(target).addScaledVector(dir, d); camera.lookAt(target); camera.updateMatrixWorld();
+    return corners.every(c => { const v = c.clone().project(camera); return Math.abs(v.x) < fx && v.y > -1.02 && v.y < .02; });
+  };
+  const size = () => {
+    const w = box.clientWidth, h = box.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    // Push the picture down so the desk sits low, under the title.
+    camera.setViewOffset(w, h, 0, -h * .2, w, h);
+    fx = w < h ? .96 : Math.min(.62, .5 * 1.6 / camera.aspect + .2);
+    let lo = 2, hi = 30;
+    for (let k = 0; k < 24; k++) { const m = (lo + hi) / 2; fits(m) ? hi = m : lo = m; }
+    dist = hi * 1.03;   // a little room for the parallax
+  };
+  new ResizeObserver(size).observe(box); size();
+
+  // Pointer: the top form lifts when you point at it. The desk and camera stay still.
+  const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(9, 9);
+  let hover = false, overPile = false, view = 0, viewTo = 0;
+  const sheetC = new THREE.Vector3(), deskPos = new THREE.Vector3(), paperPos = new THREE.Vector3(), lookNow = new THREE.Vector3();
+  box.addEventListener('pointermove', e => {
+    const b = box.getBoundingClientRect();
+    ndc.set(((e.clientX - b.left) / b.width) * 2 - 1, -((e.clientY - b.top) / b.height) * 2 + 1);
+  });
+  box.addEventListener('pointerleave', () => { ndc.set(9, 9); });
+
+  let visible = true;
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(box);
+
+  const t0 = performance.now();
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  const frame = now => {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    const t = now - t0;
+
+    // Sheets drop onto the pile one after another, then settle.
+    for (const s of sheets) {
+      const {rest, delay} = s.userData;
+      const k = still ? 1 : Math.min(1, Math.max(0, (t - delay) / 650)), e = ease(k);
+      s.userData.lift += ((s === topSheet && hover ? .045 : 0) - s.userData.lift) * .12;
+      s.position.set(rest.x + (1 - e) * .18, rest.y + (1 - e) * (.9 + rest.r) + s.userData.lift, rest.z - (1 - e) * .25);
+      s.rotation.set((1 - e) * -.35, rest.r + (1 - e) * .5, (1 - e) * .12 + (s === topSheet ? -s.userData.lift * .8 : 0));
+      s.visible = k > 0 || still;
+    }
+
+    if (!still) {
+      const b = Math.sin(t / 700);
+      const hopK = Math.min(1, (t - hopAt) / 520), hop = hopK < 1 ? Math.sin(hopK * Math.PI) : 0;
+      doll.position.y = PS + hop * .12;
+      doll.scale.set(PS * (1 + b * .015 - hop * .05), PS * (1 - b * .015 + hop * .08), PS * (1 + b * .015 - hop * .05));
+      doll.rotation.z = Math.sin(t / 1400) * .035;
+      doll.rotation.y = -.25 + Math.sin(t / 3100) * .1;
+      const blink = (t % 4200) < 140 ? .12 : 1;
+      const fm = doll.userData.faceMat;
+      if (fm) { const m = blink < 1 ? faceShut : faceOpen; if (fm.map !== m) { fm.map = m; fm.needsUpdate = true; } }
+    }
+    // Desk view ↔ looking down onto the top form.
+    view += (viewTo - view) * (still ? 1 : .065);
+    if (Math.abs(viewTo - view) < .002) view = viewTo;
+    const e = view * view * (3 - 2 * view);
+    topSheet.getWorldPosition(sheetC);
+    deskPos.copy(target).addScaledVector(dir, dist);
+    paperPos.set(sheetC.x, sheetC.y + 1.45, sheetC.z + .32);
+    camera.position.lerpVectors(deskPos, paperPos, e);
+    lookNow.lerpVectors(target, sheetC, e);
+    camera.lookAt(lookNow);
+
+    ray.setFromCamera(ndc, camera);
+    const ready = t > N * 55 + 650 && view === 0 && viewTo === 0;
+    overPile = ready && ray.intersectObjects(sheets).length > 0;
+    hover = overPile && ray.intersectObject(topSheet).length > 0;
+    box.classList.toggle('pick', overPile);
+    const nowOver = ray.intersectObject(doll, true).length > 0;
+    if (nowOver && !overDoll && t - hopAt > 600 && view === 0) hopAt = t;
+    overDoll = nowOver;
+
+    renderer.render(scene, camera);
+  };
+  requestAnimationFrame(frame);
+  box.classList.add('on');
+
+  /* ---------- Writing scene ---------- */
+  const hero = document.querySelector('.hero'), writer = document.getElementById('writer'), form = document.getElementById('s1');
+  const KEY = 'ass-pinboard-v1';
+  const loadBoard = () => { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } };
+  const saveBoard = b => { try { localStorage.setItem(KEY, JSON.stringify(b)); } catch (e) {} };
+  const board = () => { const b = loadBoard() || {p: {}, seen: {}, got: {}, stage: 'now'}; b.p ||= {}; b.got ||= {}; b.p['S-1'] ||= {draft: {}, filed: null}; return b; };
+  const FIELDS = ['name', 'dev', 'devId', 'des', 'desId', 'bus', 'busId', 'repo', 'chat', 'meet', 'invited', 'agreeStd', 'agreeAgent'];
+  const read = () => Object.fromEntries(FIELDS.map(k => [k, form[k].type === 'checkbox' ? form[k].checked : form[k].value]));
+  const body0 = form.querySelector('[data-body]').innerHTML;
+
+  // The same checks the Pinboard runs before signing.
+  const check = (d, me) => {
+    const t = k => String(d[k] || '').trim(), out = [], ROLE = {dev: 'Developer', des: 'Designer', bus: 'Business member'};
+    if (!t('name')) out.push({k: 'name', msg: 'Give your studio a name.'});
+    const ids = ['devId', 'desId', 'busId'].map(t);
+    for (const r in ROLE) {
+      const id = t(r + 'Id'), noName = !t(r), badId = !/^\d{8}$/.test(id), dup = !badId && ids.filter(x => x === id).length > 1;
+      const msg = noName && badId ? `Write the ${ROLE[r]}'s full name and 8-digit student ID.` : noName ? `Write the ${ROLE[r]}'s full name.`
+        : badId ? `The ${ROLE[r]}'s student ID needs all 8 digits.` : dup ? 'Two members have the same student ID.' : '';
+      if (msg) out.push({k: 'row-' + r, msg});
+    }
+    if (!out.some(o => o.k.startsWith('row-')) && !ids.includes(me.id)) out.push({k: 'members', msg: `You need to be on this form (your student ID is ${me.id}).`});
+    if (!t('repo')) out.push({k: 'repo', msg: 'Add your GitHub organization link.'});
+    else if (!/^(https?:\/\/)?(www\.)?github\.com\/[^\s/?#]+\/?$/.test(t('repo'))) out.push({k: 'repo', msg: 'Use your organization link, like github.com/your-studio.'});
+    if (!t('chat')) out.push({k: 'chat', msg: 'Add your Discord invite link.'});
+    else if (!/discord(\.gg|(app)?\.com\/invite)\/\S+/i.test(t('chat'))) out.push({k: 'chat', msg: 'Use a Discord invite link, like discord.gg/…'});
+    if (!t('meet')) out.push({k: 'meet', msg: 'Add your weekly meeting time.'});
+    if (!d.invited) out.push({k: 'invited', msg: 'Invite Guide and Nueng, then tick this.'});
+    if (!d.agreeStd) out.push({k: 'agreeStd', msg: 'All three of you need to agree to this.'});
+    if (!d.agreeAgent) out.push({k: 'agreeAgent', msg: 'Tick this once each of you has agent access.'});
+    return out;
+  };
+  const clearMarks = () => { form.querySelectorAll('.bad').forEach(x => x.classList.remove('bad')); form.querySelectorAll('.msg, .msgs').forEach(x => x.remove()); };
+  const mark = list => {
+    clearMarks();
+    for (const {k, msg} of list) {
+      const el = form.querySelector(`[data-k="${k}"]`); if (!el) continue;
+      el.classList.add('bad');
+      const m = document.createElement('p'); m.className = 'msg'; m.dataset.for = k; m.textContent = msg;
+      if (el.tagName === 'TR' || el.tagName === 'TABLE') {
+        const tb = el.closest('table');
+        let box = tb.nextElementSibling;
+        if (!box || !box.classList.contains('msgs')) { box = document.createElement('div'); box.className = 'msgs'; tb.insertAdjacentElement('afterend', box); }
+        box.appendChild(m);
+      } else el.insertAdjacentElement('afterend', m);
+    }
+  };
+
+  const openPaper = () => {
+    const me = ASSAuth.get();
+    writer.querySelector('[data-who]').textContent = `Signed in as ${me.name}`;
+    const b = board(), s = b.p['S-1'];
+    const holder = form.querySelector('[data-body]');
+    if (s.sign || s.filed) {
+      holder.innerHTML = `<div class="done sec"><p>${s.filed ? 'Your studio is already registered.' : 'Your Studio Registration Form is already on your board, waiting for signatures.'}</p><a href="../studio/">Open my board</a></div>`;
+    } else {
+      if (!holder.querySelector('input')) holder.innerHTML = body0;
+      for (const k of FIELDS) { const v = s.draft?.[k]; if (form[k].type === 'checkbox') form[k].checked = !!v; else form[k].value = v || ''; }
+      clearMarks();
+    }
+    writer.classList.add('show'); writer.removeAttribute('aria-hidden');
+    document.documentElement.style.overflow = 'hidden';
+    requestAnimationFrame(() => requestAnimationFrame(() => writer.classList.add('in')));
+    setTimeout(() => (form.querySelector('input') || writer.querySelector('a, button')).focus({preventScroll: true}), 380);
+  };
+  let busy = false;
+  const startWriting = async () => {
+    if (busy || viewTo === 1) return; busy = true;
+    if (!ASSAuth.get()) {
+      const me = await ASSAuth.ask({why: 'Sign in with your KMITL account to fill in the Studio Registration Form.'});
+      if (!me) { busy = false; return; }
+    }
+    hero.classList.add('writing'); viewTo = 1; ndc.set(9, 9);
+    setTimeout(() => { openPaper(); busy = false; }, still ? 0 : 900);
+  };
+  const stopWriting = () => {
+    writer.classList.remove('in'); writer.setAttribute('aria-hidden', 'true');
+    setTimeout(() => { writer.classList.remove('show'); document.documentElement.style.overflow = ''; }, still ? 0 : 300);
+    hero.classList.remove('writing'); viewTo = 0;
+    document.getElementById('write-btn').focus({preventScroll: true});
+  };
+
+  box.addEventListener('click', () => { if (overPile) startWriting(); });
+  document.getElementById('write-btn').addEventListener('click', startWriting);
+  writer.querySelector('[data-close]').addEventListener('click', stopWriting);
+  writer.addEventListener('click', e => { if (e.target === writer) stopWriting(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && writer.classList.contains('in')) stopWriting(); });
+
+  // Save as you write, into the same draft the Pinboard uses.
+  form.addEventListener('input', e => {
+    const b = board(), s = b.p['S-1']; if (s.sign || s.filed) return;
+    s.draft = {...s.draft, ...read()}; saveBoard(b);
+    const row = e.target.closest('[data-k]');
+    if (row) { row.classList.remove('bad'); form.querySelector(`.msg[data-for="${row.dataset.k}"]`)?.remove(); form.querySelector('.msg[data-for="members"]')?.remove(); form.querySelectorAll('.msgs').forEach(b => b.children.length || b.remove()); }
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const me = ASSAuth.get(); if (!me) { stopWriting(); return; }
+    const d = read(), problems = check(d, me);
+    if (problems.length) { mark(problems); form.querySelector('.bad')?.scrollIntoView({block: 'center', behavior: still ? 'auto' : 'smooth'}); return; }
+    if (!/^https?:\/\//i.test(d.repo.trim())) d.repo = 'https://' + d.repo.trim();   // the board expects a full link
+    const b = board(); b.p['S-1'].draft = d; b.got['S-1'] = 1; b.stage = b.stage || 'now'; saveBoard(b);
+    writer.classList.add('sent');
+    setTimeout(() => document.body.classList.add('leaving'), still ? 0 : 550);
+    setTimeout(() => { location.href = '../studio/?from=desk'; }, still ? 0 : 900);
+  });
+})();
+
+</script>
+</body>
+</html>
